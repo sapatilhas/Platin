@@ -1,21 +1,21 @@
-// ==UserScript==
+==UserScript==
 // @name        PlatinSport direct AceStream links
 // @description Obtain direct, clickable AceStream links on PlatinSport, bypassing url shorteners.
 // @namespace   StephenP
 // @author   StephenP
 // @grant       none
 // @version     1.0
-// @match https://www.platinsport.com/*
+@match https://www.platinsport.com/*
 // @contributionURL https://nowpayments.io/donation/stephenpgreasyfork
 // @license AGPL-3.0-or-later
 // ==/UserScript==
 
 if(!document.location.href.includes("/link/")){
-  var links=document.getElementsByTagName("A");
+  var links=document.getElementsByTagName("Acest");
   
   for(let link of links){
     if(link.href.includes("bc.vc")){
-      let pos=link.href.indexOf("https://www.p");
+      let pos=link.href.indexOf("https://www.platinsport.com");
       link.href=link.href.slice(pos);
     }
   }
